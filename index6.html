@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vansh Singla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #feefee;
+            color: #0c0c22;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            border-bottom: 1px solid #e0dfff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background-color: #faefee;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 70px;
+        }
+
+        .nav-right {
+            font-size: 1.6rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #0c0c22;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #9e9ec4;
+            font-size: 1.05rem;
+            transition: 0.2s;
+        }
+
+        .resume {
+            background-color: #ff5e5e;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 6px 6px 0 #0c0c22;
+            transition: all 0.2s ease;
+        }
+
+        .resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 8px 8px 0 #0c0c22;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 120px 20px 40px;
+        }
+
+        .hero img {
+            width: 75px;
+            height: 75px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .hero span {
+            color: #ff5e5e;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #444;
+            max-width: 520px;
+            line-height: 1.6;
+        }
+
+        .about-section {
+            padding: 100px 20px;
+            background-color: #fff6f6;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .about-image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 94, 94, 0.2);
+            transition: 0.3s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 94, 94, 0.4);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .highlight {
+            color: #ff5e5e;
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 94, 94, 0.4);
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 5px;
+        }
+
+        .badge {
+            background-color: #ffe0e0;
+            color: #ff5e5e;
+            padding: 4px 10px;
+            margin: 0 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        #projects,
+        #contact {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            color: #ff5e5e;
+        }
+
+        .project {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .contact {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .contact a {
+            color: #ff5e5e;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #0c0c22;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff5e5e;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .project-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        .project-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .project-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ff5e5e;
+        }
+
+        .project-info p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .resume {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-right">Vansh Singla</div>
+            <div class="nav-left">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="vansh-resume.pdf" class="resume" target="_blank">Resume</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://cdn-icons-png.flaticon.com/512/5825/5825575.png" alt="Icon" />
+        <h1><span>Namaskaram 🙏🏻,</span> I’m Vansh</h1>
+        <p>— a passionate Computer Science undergraduate exploring the world of </p>
+        <span id="element"></span>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="IMG.jpg" alt="Vansh Image">
+            </div>
+            <div class="about-text">
+                <h2>About <span class="highlight">Me</span></h2>
+                <p>
+                    I'm <strong>Vansh Singla</strong>, a curious and creative B.Tech CSE student driven by a passion for
+                    building smart, user-friendly solutions. <br><br>
+                    Currently exploring the realms of <span class="badge">Web Development</span>, <span
+                        class="badge">Python</span>, <span class="badge">AI/ML</span>, and <span class="badge">Frontend
+                        Frameworks</span>.<br><br>
+                    I believe in <em>learning by doing</em> and am constantly experimenting with new technologies. Let's
+                    connect and create something impactful together!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-gallery">
+            <div class="project-card">
+                <img src="exam-portal.png" alt="Exam Portal">
+                <div class="project-info">
+                    <h3>📝 Exam Portal with Proctoring</h3>
+                    <p>Designed a web-based exam system with separate interfaces for teachers, students, and admin. Includes features like MCQ creation, exam attempts, result tracking, and data handling using localStorage.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="hotel-manage.png" alt="Hotel Management">
+                <div class="project-info">
+                    <h3>🏨 Hotel Management System</h3>
+                    <p>Created a basic hotel management project in Python to handle guest details, room booking, and service records using simple input/output and object-oriented programming concepts.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="jewellery-shop.webp" alt="Jewelry Shop Website">
+                <div class="project-info">
+                    <h3>💍 Jewelry Shop Website</h3>
+                    <p>Created a responsive website using HTML, CSS, and JavaScript to display jewelry products and customer testimonials with basic animations for a better user experience.
+                        <br><br><br>
+                    IN PROGRESS
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact">
+            <p>Feel free to connect with me:</p>
+            <p>📧 Email: <a href="mailto:singlavansh125@gmail.com">singlavansh125@gmail.com</a></p>
+            <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/vansh-singla-3a86a2325"
+                    target="_blank">linkedin.com/in/vanshsingla</a></p>
+            <p>🐙 GitHub: <a href="https://github.com/vanshsingla66" target="_blank">github.com/vanshsingla</a></p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Vansh Singla. Made with ❤️. View on
+        <a href="https://github.com/vanshsingla66" target="_blank">GitHub</a>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['programming', 'AI & ML', 'web development', 'creative coding'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+    </script>
+</body>
+
+</html>
